@@ -9,12 +9,25 @@ descrie('Server Integration Testing', function() {
   afterAll(() => server.stop())
 
   describe('Valid Requests', () => {
-    let resPost
+    describe('POST /api/v1/note', () => {
+      let resPost
 
-    beforeAll(() => {
-      return superagent.post(':4000/api/v1/note')
-      .send({title: 'hello', content: 'watman'})
-      .then(res => )
+      beforeAll(() => {
+        return superagent.post(':4000/api/v1/note')
+        .send({title: 'hello', content: 'watman'})
+        .then(res => {
+          console.log(res)
+          resPost = res
+        })
+        .catch(console.error)
+      })
+      it('should post and create a new record', () => {
+        expect(resPost.body.title).toEqual('hello')
+        expect(resPost.body.content).toEqual('watman')
+      })
+      it('should respond with a status 201', () => {
+        expect.addSnapshotSerializer(resPost.status).toBe(201)
+      })
     })
   })
 })
