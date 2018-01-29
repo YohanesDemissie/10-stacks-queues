@@ -1,6 +1,6 @@
 'use strict';
 
-const queue = require('../lib/queue.js')
+const Queue = require('../lib/queue.js')
 
 describe('Queue Module', () => {
   beforeEach(() => this.queue = new Queue());
