@@ -1,0 +1,23 @@
+{
+  "name": "lab-yohanes",
+  "version": "1.0.0",
+  "description": "stacks & queues",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "lets",
+    "get",
+    "err",
+    "done!"
+  ],
+  "author": "Yohanes the Dev Don... in the making",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.1.4"
+  }
+}
